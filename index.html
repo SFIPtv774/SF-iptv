@@ -36,44 +36,8 @@
 
     /* WhatsApp Floating Button (top right) */
     .whatsapp-float{position:fixed;top:20px;right:20px;width:60px;height:60px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:999;box-shadow:0 0 12px #000}
-    .whatsapp-float img{width:38px;height:38px}/* Mobile Optimization */
-@media (max-width: 768px) {
-  /* Cards ko ek ke niche ek karne ke liye */
-  .container, .hero {
-    display: flex !important;
-    flex-direction: column !important;
-    padding: 10px !important;
-  }
-
-  .card, div[style*="border: 1px"] {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-bottom: 20px !important;
-  }
-
-  /* Header aur Menu ko sahi karne ke liye */
-  header {
-    flex-direction: column !important;
-    height: auto !important;
-  }
-
-  nav {
-    margin-left: 0 !important;
-    justify-content: center !important;
-    flex-wrap: wrap !important;
-  }
-
-  /* WhatsApp button ko niche lane ke liye */
-  .whatsapp-float {
-    top: auto !important;
-    bottom: 20px !important;
-    right: 20px !important;
-  }
-
-  /* Text size bada karne ke liye */
-  h1 { font-size: 1.8rem !important; }
-  p { font-size: 1.1rem !important; }
-}
+    .whatsapp-float img{width:38px;height:38px}ero{grid-template-columns:1fr;}.container{margin:20px;padding:14px}}
+  /* NEON PREMIUM THEME UPGRADE */
 
     /* Plans */
     .plans{display:flex;gap:12px;margin-top:20px}
@@ -86,8 +50,7 @@
     .channels{display:flex;gap:10px;margin-top:15px;flex-wrap:wrap}
     .channels img{width:60px;height:60px;border-radius:12px;box-shadow:0 0 10px #000}
 
-    @media(max-width:900px){.hero{grid-template-columns:1fr;}.container{margin:20px;padding:14px}}
-  /* NEON PREMIUM THEME UPGRADE */
+    @media(max-width:900px){.h
 body{
   margin:0;
   font-family:Inter,Arial;
@@ -108,6 +71,36 @@ body{
 .particle{
  position:fixed;width:6px;height:6px;background:#0ff;border-radius:50%;opacity:0.45;animation:floatParticle 6s linear infinite;
 }
+  /* --- Ise pehle wale mobile code ki jagah paste karein --- */
+@media (max-width: 768px) {
+  /* 1. Pricing section ko column mein badalna */
+  .container, 
+  div[style*="display: flex"] {
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 10px !important;
+  }
+
+  /* 2. Har card ko full width dena taake text bada dikhe */
+  .card, 
+  div[style*="border: 1px"] {
+    width: 95% !important; /* Mobile screen par card bada ho jayega */
+    max-width: 400px !important;
+    margin-bottom: 25px !important;
+    padding: 20px !important;
+  }
+
+  /* 3. Text ko mazeed saaf aur bada karna */
+  h1 { font-size: 1.8rem !important; }
+  .card h2, .card div { font-size: 1.2rem !important; }
+  
+  /* 4. Navigation Menu ko center karna */
+  nav {
+    margin-left: 0 !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+}                          
 </style>
 </head>
 <body>
