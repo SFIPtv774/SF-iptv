@@ -1,0 +1,211 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SF IPTV — Live TV & VOD</title>
+  <meta name="description" content="SF IPTV — affordable, reliable IPTV streaming. Get live TV, movies, web series & easy setup." />
+
+  <style>
+    :root{--accent:#ffb400;--bg:#0f1724;--card:#0b1220;--muted:#9aa6bf}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,Arial;background:url('https://share.google/MZRtU4YbCX0zC6Ipa');background-size:cover;background-position:center;color:#e6eef8}
+    .overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.65);z-index:-1}
+
+    /* Loading Animation */
+    #loader{position:fixed;top:0;left:0;width:100%;height:100%;background:#000;display:flex;align-items:center;justify-content:center;z-index:9999}
+    .spinner{width:70px;height:70px;border:6px solid #333;border-top-color:var(--accent);border-radius:50%;animation:spin 1s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    /* Layout */
+    .container{max-width:1100px;margin:40px auto;padding:24px;background:rgba(0,0,0,0.4);backdrop-filter:blur(6px);border-radius:16px}
+    header{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#ff6a00);display:flex;align-items:center;justify-content:center;font-weight:700;color:#000;box-shadow:0 0 18px var(--accent)}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:28px}
+    .card{background:rgba(255,255,255,0.05);padding:20px;border-radius:12px;box-shadow:0 0 18px rgba(0,0,0,0.4)}
+    h1{margin:0 0 8px;font-size:28px;text-shadow:0 0 10px #000}
+    p.lead{color:var(--muted);margin:0 0 18px}
+
+    /* WhatsApp Floating Button (top right) */
+    .whatsapp-float{position:fixed;top:20px;right:20px;width:60px;height:60px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:999;box-shadow:0 0 12px #000}
+    .whatsapp-float img{width:38px;height:38px}
+
+    /* Plans */
+    .plans{display:flex;gap:12px;margin-top:20px}
+    .plan{flex:1;padding:16px;border-radius:10px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(4px)}
+    .plan h3{margin:0 0 8px}
+    .price{font-size:20px;font-weight:700;color:var(--accent);text-shadow:0 0 10px #000}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--accent);color:#000;text-decoration:none;font-weight:700;box-shadow:0 0 10px var(--accent)}
+
+    /* Channel Logos */
+    .channels{display:flex;gap:10px;margin-top:15px;flex-wrap:wrap}
+    .channels img{width:60px;height:60px;border-radius:12px;box-shadow:0 0 10px #000}
+
+    @media(max-width:900px){.hero{grid-template-columns:1fr;}.container{margin:20px;padding:14px}}
+  /* NEON PREMIUM THEME UPGRADE */
+body{
+  margin:0;
+  font-family:Inter,Arial;
+  background: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200') no-repeat center center fixed;
+  background-size: cover;
+  color:#e6eef8;
+}.card, .payment-card, .plan{
+ border:1px solid rgba(0,255,255,0.35) !important;
+ box-shadow:0 0 18px rgba(0,255,255,0.25) !important;
+}
+.btn{
+ background:#00eaff !important;
+ box-shadow:0 0 14px #00eaff;
+}
+/* Floating particles */
+@keyframes floatParticle{
+ 0%{transform:translateY(0) scale(1);} 100%{transform:translateY(-70px) scale(1.4);} }
+.particle{
+ position:fixed;width:6px;height:6px;background:#0ff;border-radius:50%;opacity:0.45;animation:floatParticle 6s linear infinite;
+}
+</style>
+</head>
+<body>
+
+<div id="loader"><div class="spinner"></div></div>
+<script>
+  window.onload = () => {
+    document.getElementById("loader").style.display = "none";
+  }
+</script>
+
+<div class="overlay"></div>
+
+  <!-- FLOATING WHATSAPP ICON (TOP RIGHT) -->
+  <a class="whatsapp-float" href="https://wa.me/923057884971" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" />
+  </a>
+
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">SF</div>
+        <div>
+          <div style="font-weight:700;font-size:20px">SF IPTV</div>
+          <div class="small" style="color:var(--orange)">Live TV • Movies • Sports • Web Series</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#plans">Plans</a>
+        <a href="#payment">Payment</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="card">
+          <h1>Premium IPTV — 170,000+ Channels & VOD</h1>
+          <p class="lead">4K/HD Movies, Sports, Web Series • Supports Smart TV, Android, iOS, Firestick.</p>
+
+          <!-- CHANNEL LOGOS ADDED -->
+          <div class="channels">
+           
+          </div>
+  <div class="plans" id="plans">
+            <div class="plan">
+              <h3>Basic</h3>
+              <div class="price">pkr 900 / Month</div>
+              <div class="small">15,000+ Channels • 1 Device</div>
+              <div style="margin-top:10px"><a class="btn" href="#payment">Buy Now</a></div>
+            </div>
+            <div class="plan">
+              <h3>Standard</h3>
+              <div class="price">pkr 3000 / 6 Months</div>
+              <div class="small">80,000+ Channels • 1 Devices</div>
+              <div style="margin-top:10px"><a class="btn" href="#payment">Buy Now</a></div>
+            </div>
+            <div class="plan">
+              <h3>Premium</h3>
+              <div class="price">pkr 5500 / Year</div>
+              <div class="small">170,000+ Channels • 2 Devices • VOD</div>
+              <div style="margin-top:10px"><a class="btn" href="#payment">Buy Now</a></div>
+            </div>
+          </div>
+
+          <div class="plans" id="plans">
+            <div class="plan">
+              <h3>Basic</h3>
+              <div class="price">$10 / Month</div>
+              <div class="small">15,000+ Channels • 1 Device</div>
+              <div style="margin-top:10px"><a class="btn" href="#payment">Buy Now</a></div>
+            </div>
+            <div class="plan">
+              <h3>Standard</h3>
+              <div class="price">$30 / 6 Months</div>
+              <div class="small">80,000+ Channels • 1 Devices</div>
+              <div style="margin-top:10px"><a class="btn" href="#payment">Buy Now</a></div>
+            </div>
+            <div class="plan">
+              <h3>Premium</h3>
+              <div class="price">$60 / Year</div>
+              <div class="small">170,000+ Channels • 2 Devices • VOD</div>
+              <div style="margin-top:10px"><a class="btn" href="#payment">Buy Now</a></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3>24-Hour Trial</h3>
+          <form>
+            <label class="small">Full Name</label>
+            <input placeholder="Your Name" />
+            <label class="small">Email</label>
+            <input type="email" placeholder="you@example.com" />
+            <label class="small">Plan</label>
+            <select>
+              <option>Basic</option>
+              <option>Standard</option>
+              <option>Premium</option>
+            </select>
+            <button class="btn" type="submit">Start Trial</button>
+          </form>
+        </div>
+      </aside>
+    </section>
+
+    <!-- PAYMENT SECTION -->
+<section class="card" id="payment" style="margin-top:20px">
+      <h2>Payment Methods</h2>
+      <p class="small">Local & International Payments Supported.</p>
+
+      <h3 style="margin-top:18px">💳 PayPal</h3>
+      <div class="small">
+        <strong>Email:</strong> farooqali58126@gmail.com
+      </div>
+      
+      <h3 style="margin-top:18px">E-Transfer (Canada/International)</h3>
+      <div class="small">
+         
+        <br/> (Send as request)
+      </div>
+      
+    </section>
+    <!-- CONTACT -->
+    <section class="card" id="contact" style="margin-top:20px">
+      <h2>Contact & Support</h2>
+      <p class="small">24/7 Available Now</p>
+      <p class="small">WhatsApp: <strong>+92 305-788-4971</strong></p>
+      <p class="small">Email: <strong>sonsraja7@gmail.com</strong></p>
+    </section>
+
+    <footer class="footer">
+      <div class="small">© 2025 SF IPTV — All rights reserved.</div>
+    </footer>
+  </div>
+</body>
+</html>
