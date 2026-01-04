@@ -10,7 +10,47 @@
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <meta property="og:title" content="SF IPTV - Premium Streaming">
 <meta property="og:description" content="Watch 170,000+ Channels in 4K quality.">
-  <style>
+/* Mobile View Settings */
+@media (max-width: 768px) {
+  /* Header ko sahi karne ke liye */
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  nav {
+    margin-left: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* Pricing cards ko ek ke niche ek lane ke liye */
+  .container {
+    padding: 15px;
+    margin: 10px auto;
+  }
+
+  /* Card container agar flex hai toh usay column karein */
+  .plans-wrapper, .grid-container { 
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  .card, .plan-card {
+    width: 100% !important;
+    max-width: 350px;
+    margin-bottom: 20px;
+  }
+
+  /* Text size behtar karne ke liye */
+  h1 { font-size: 1.5rem !important; }
+  p { font-size: 1rem !important; }
+}
+ <style>
     :root{--accent:#ffb400;--bg:#0f1724;--card:#0b1220;--muted:#9aa6bf}
     *{box-sizing:border-box}
     body{margin:0;font-family:Inter,Arial;background:url('https://share.google/MZRtU4YbCX0zC6Ipa');background-size:cover;background-position:center;color:#e6eef8}
