@@ -11,38 +11,38 @@
     *{box-sizing:border-box}
     body{margin:0;font-family:Inter,Arial;background:url('https://share.google/MZRtU4YbCX0zC6Ipa');background-size:cover;background-position:center;color:#e6eef8}
     .overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.65);z-index:-1}
-/* --- Square Virtual Style Mobile --- */
+/* --- Global Square Style (Laptop & Mobile) --- */
+
+/* 1. Sab corners ko sharp square karna */
+*, .plan, .card, .trial-form, input, select, button, .btn, img {
+    border-radius: 0px !important;
+}
+
+/* 2. Sharp Borders aur Glow */
+.plan, .card, .trial-form {
+    border: 2px solid var(--accent) !important;
+    background: rgba(15, 23, 36, 0.95) !important;
+    box-shadow: 5px 5px 0px rgba(255, 180, 0, 0.2) !important; /* Professional Square Shadow */
+}
+
+/* 3. Mobile Specific (Ek ke niche ek) */
 @media (max-width: 768px) {
-  /* 1. Sharp Square Cards */
-  .plan, .card, .trial-form, div[style*="border: 1px"] {
-    background: rgba(11, 18, 32, 0.95) !important; /* Thora solid dark look */
-    border: 2px solid var(--accent) !important; /* Sharp golden border */
-    border-radius: 0px !important; /* Is se corners bilkul square (nokele) ho jayenge */
-    width: 95% !important;
-    margin: 10px auto !important;
-    padding: 20px !important;
-    box-shadow: 5px 5px 0px rgba(255, 180, 0, 0.2) !important; /* Retro square shadow */
-  }
+    .plans, .container, .hero, .trial-section {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    .plan, .card {
+        width: 95% !important;
+        margin-bottom: 20px !important;
+    }
 
-  /* 2. Square Inputs & Buttons */
-  input, select, button {
-    border-radius: 0px !important; /* Buttons aur boxes bhi square */
-    height: 45px !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    background: #1a222e !important;
-    color: white !important;
-    width: 100% !important;
-    margin-bottom: 10px !important;
-  }
-
-  /* 3. Button Glow (Square) */
-  button[type="submit"], .btn {
-    background: var(--accent) !important;
-    color: black !important;
-    font-weight: bold !important;
-    border: none !important;
-    text-transform: uppercase !important;
-  }
+    input, select, button {
+        width: 100% !important;
+        height: 50px !important;
+        margin-bottom: 15px !important;
+    }
 }
   /* 4. Header aur Navigation (Clean Look) */
   header { flex-direction: column !important; text-align: center !important; padding: 20px 10px !important; }
