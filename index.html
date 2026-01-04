@@ -10,46 +10,6 @@
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <meta property="og:title" content="SF IPTV - Premium Streaming">
 <meta property="og:description" content="Watch 170,000+ Channels in 4K quality.">
-/* Mobile View Settings */
-@media (max-width: 768px) {
-  /* Header ko sahi karne ke liye */
-  header {
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
-  }
-  
-  nav {
-    margin-left: 0 !important;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  /* Pricing cards ko ek ke niche ek lane ke liye */
-  .container {
-    padding: 15px;
-    margin: 10px auto;
-  }
-
-  /* Card container agar flex hai toh usay column karein */
-  .plans-wrapper, .grid-container { 
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center;
-  }
-
-  .card, .plan-card {
-    width: 100% !important;
-    max-width: 350px;
-    margin-bottom: 20px;
-  }
-
-  /* Text size behtar karne ke liye */
-  h1 { font-size: 1.5rem !important; }
-  p { font-size: 1rem !important; }
-}
  <style>
     :root{--accent:#ffb400;--bg:#0f1724;--card:#0b1220;--muted:#9aa6bf}
     *{box-sizing:border-box}
@@ -67,7 +27,53 @@
     .brand{display:flex;gap:12px;align-items:center}
     .logo{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#ff6a00);display:flex;align-items:center;justify-content:center;font-weight:700;color:#000;box-shadow:0 0 18px var(--accent)}
     nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+@media (max-width: 768px) {
+  /* 1. Header aur Logo ko center mein lane ke liye */
+  header {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 15px !important;
+  }
+  
+  .brand {
+    justify-content: center !important;
+    margin-bottom: 10px;
+  }
 
+  /* 2. Menu links ko ek line mein set karne ke liye */
+  nav {
+    margin-left: 0 !important;
+    justify-content: center !important;
+    gap: 15px !important;
+  }
+
+  /* 3. Hero section aur Cards ko ek ke niche ek karne ke liye */
+  .hero {
+    grid-template-columns: 1fr !important; /* Columns ko khatam kar ke stack karega */
+    text-align: center !important;
+  }
+
+  /* 4. Pricing Cards ko bada karne ke liye taake lafz saaf dikhein */
+  .container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 10px !important;
+  }
+
+  .card {
+    width: 100% !important;
+    max-width: 350px !important;
+    margin: 10px 0 !important;
+  }
+
+  /* 5. WhatsApp Button ko kone mein niche set karna */
+  .whatsapp-float {
+    top: auto !important;
+    bottom: 20px !important;
+    right: 20px !important;
+  }
+}
     /* Hero */
     .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:28px}
     .card{background:rgba(255,255,255,0.05);padding:20px;border-radius:12px;box-shadow:0 0 18px rgba(0,0,0,0.4)}
