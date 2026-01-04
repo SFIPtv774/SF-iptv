@@ -11,7 +11,37 @@
     *{box-sizing:border-box}
     body{margin:0;font-family:Inter,Arial;background:url('https://share.google/MZRtU4YbCX0zC6Ipa');background-size:cover;background-position:center;color:#e6eef8}
     .overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.65);z-index:-1}
+/* Mobile View Fix */
+@media (max-width: 768px) {
+  /* Cards ko ek ke niche ek karne ke liye */
+  .plans, .container, div[style*="display: flex"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
 
+  /* Har card ko mobile par bada aur saaf karne ke liye */
+  .plan, .card, div[style*="border: 1px"] {
+    width: 95% !important;
+    max-width: 400px !important;
+    margin-bottom: 20px !important;
+    padding: 20px !important;
+  }
+
+  /* Trial Form ko screen mein fit karne ke liye */
+  form, .trial-form {
+    width: 100% !important;
+    padding: 10px !important;
+  }
+  input, select {
+    width: 100% !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Header aur Menu ko center karna */
+  header { flex-direction: column !important; text-align: center !important; }
+  nav { margin-left: 0 !important; justify-content: center !important; gap: 10px !important; }
+}
     /* Loading Animation */
     #loader{position:fixed;top:0;left:0;width:100%;height:100%;background:#000;display:flex;align-items:center;justify-content:center;z-index:9999}
     .spinner{width:70px;height:70px;border:6px solid #333;border-top-color:var(--accent);border-radius:50%;animation:spin 1s linear infinite}
