@@ -168,21 +168,21 @@ body{
               <h3>Basic</h3>
               <div class="price">Pkr900/Month</div>
               <div class="small">15,000+ Channels • 1 Device</div>
-              <div style="margin-top:10px"><a class="btn" href="#payment">Buy Now</a></div>
+              <div style="margin-top:10px"><a class="btn" href="javascript:void(0)" onclick="buyNow('Basic', 'PKR 900 / Month')">Buy Now</a>
             </div>
     
             <div class="plan">
               <h3>Standard</h3>
               <div class="price">Pkr3000/6Months</div>
               <div class="small">80,000+ Channels • 1 Devices</div>
-              <div style="margin-top:10px"><a class="btn" href="#payment">Buy Now</a></div>
+              <div style="margin-top:10px"><a class="btn" href="javascript:void(0)" onclick="buyNow('Standard', 'PKR 3000 / 6 Months')">Buy Now</a>
             </div>
     
             <div class="plan">
               <h3>Premium</h3>
               <div class="price">Pkr5500/Year</div>
               <div class="small">170,000+ Channels • 2 Devices • VOD</div>
-              <div style="margin-top:10px"><a class="btn" href="#payment">Buy Now</a></div>
+              <div style="margin-top:10px"><a class="btn" href="javascript:void(0)" onclick="buyNow('Premium', 'PKR 5500 / Year')">Buy Now</a>
             </div>
           </div>
 
@@ -191,19 +191,19 @@ body{
               <h3>Basic</h3>
               <div class="price">$10 / Month</div>
               <div class="small">15,000+ Channels • 1 Device</div>
-              <div style="margin-top:10px"><a class="btn" href="#payment">Buy Now</a></div>
+              <div style="margin-top:10px"><a class="btn" href="javascript:void(0)" onclick="buyNow('Basic', '$10 / Month')">Buy Now</a>
             </div>
             <div class="plan">
               <h3>Standard</h3>
               <div class="price">$30 / 6 Months</div>
               <div class="small">80,000+ Channels • 1 Devices</div>
-              <div style="margin-top:10px"><a class="btn" href="#payment">Buy Now</a></div>
+              <div style="margin-top:10px"><a class="btn" href="javascript:void(0)" onclick="buyNow('Standard', '$30 / 6 Months')">Buy Now</a>
             </div>
             <div class="plan">
               <h3>Premium</h3>
               <div class="price">$60 / Year</div>
               <div class="small">170,000+ Channels • 2 Devices • VOD</div>
-              <div style="margin-top:10px"><a class="btn" href="#payment">Buy Now</a></div>
+              <div style="margin-top:10px"><a class="btn" href="javascript:void(0)" onclick="buyNow('Premium', '$60 / Year')">Buy Now</a>
             </div>
           </div>
 
@@ -311,5 +311,19 @@ var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message
   document.getElementById("trialPlan").selectedIndex = 0;
 }
 </script>
+<script>
+function buyNow(plan, price) {
+  var phoneNumber = "923057884971"; // apna WhatsApp number
+
+  var message =
+    "🛒 *IPTV Buy Now Request*\n\n" +
+    "📦 Plan: " + plan + "\n" +
+    "💰 Price: " + price + "\n\n" +
+    "Please share payment details.";
+
+  var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+  window.open(url, "_blank");
+}
+</script>          
 </body>
 </html>
