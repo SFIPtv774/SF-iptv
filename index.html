@@ -288,7 +288,7 @@ function sendToWhatsApp() {
     return;
   }
 
-  // 🔴 APNA WHATSAPP NUMBER (92 se start, + mat lagao)
+  // 🔴 APNA WHATSAPP NUMBER (966 se start, + mat lagao)
   var phoneNumber = "966552019647";
 
   var now = new Date();
@@ -302,7 +302,7 @@ function sendToWhatsApp() {
     "🕒 Date: " + dateTime + "\n\n" +
     "Please activate trial.";
 
-  var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
   window.open(url, "_blank");
 
   thankYou.style.display = "block";
