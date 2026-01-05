@@ -310,20 +310,15 @@ var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message
   document.getElementById("trialEmail").value = "";
   document.getElementById("trialPlan").selectedIndex = 0;
 }
-</script>
 <script>
-function buyNow(plan, price) {
-  var phoneNumber = "923057884971"; // apna WhatsApp number
-
-  var message =
-    "🛒 *IPTV Buy Now Request*\n\n" +
-    "📦 Plan: " + plan + "\n" +
-    "💰 Price: " + price + "\n\n" +
-    "Please share payment details.";
-
-  var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
-  window.open(url, "_blank");
+function buyPlan(plan, price) {
+  const phone = "966552019647"; // apna WhatsApp number
+  const message = `I want to buy ${plan} IPTV Plan (${price})`;
+  window.open(
+    `https://wa.me/${phone}?text=${encodeURIComponent(message)}`,
+    "_blank"
+  );
 }
-</script>          
+</script>       
 </body>
 </html>
