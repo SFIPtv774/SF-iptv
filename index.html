@@ -213,19 +213,26 @@ body{
       <aside>
         <div class="card">
           <h3>24-Hour Trial</h3>
-          <form>
-            <label class="small">Full Name</label>
-            <input placeholder="Your Name" />
-            <label class="small">Email</label>
-            <input type="email" placeholder="you@example.com" />
-            <label class="small">Plan</label>
-            <select>
-              <option>Basic</option>
-              <option>Standard</option>
-              <option>Premium</option>
-            </select>
-            <button class="btn" type="submit">Start Trial</button>
-          </form>
+         <form onsubmit="sendToWhatsApp(); return false;">
+  <label class="small">Full Name</label>
+  <input id="trialName" placeholder="Your Name" />
+
+  <label class="small">Email</label>
+  <input type="email" id="trialEmail" placeholder="you@example.com" />
+
+  <label class="small">Plan</label>
+  <select id="trialPlan">
+    <option value="Basic">Basic</option>
+    <option value="Standard">Standard</option>
+    <option value="Premium">Premium</option>
+  </select>
+
+  <button class="btn" type="submit">Start Trial</button>
+
+  <p id="thankYouMsg" style="display:none;color:#00e5ff;margin-top:10px;">
+    ✅ Thank you! We will contact you shortly on WhatsApp.
+  </p>
+</form>
         </div>
       </aside>
     </section>
@@ -269,5 +276,40 @@ body{
       <div class="small">© 2025 SF IPTV — All rights reserved.</div>
     </footer>
   </div>
+  <script>
+function sendToWhatsApp() {
+  var name = document.getElementById("trialName").value;
+  var email = document.getElementById("trialEmail").value;
+  var plan = document.getElementById("trialPlan").value;
+  var thankYou = document.getElementById("thankYouMsg");
+
+  if (name === "" || email === "") {
+    alert("Please enter Name & Email");
+    return;
+  }
+
+  // 🔴 APNA WHATSAPP NUMBER (92 se start, + mat lagao)
+  var phoneNumber = "966552019647";
+
+  var now = new Date();
+  var dateTime = now.toLocaleString();
+
+  var message =
+    "📩 *24-Hour Trial Request*\n\n" +
+    "👤 Name: " + name + "\n" +
+    "📧 Email: " + email + "\n" +
+    "📦 Plan: " + plan + "\n" +
+    "🕒 Date: " + dateTime + "\n\n" +
+    "Please activate trial.";
+
+  var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+  window.open(url, "_blank");
+
+  thankYou.style.display = "block";
+  document.getElementById("trialName").value = "";
+  document.getElementById("trialEmail").value = "";
+  document.getElementById("trialPlan").selectedIndex = 0;
+}
+</script>
 </body>
 </html>
